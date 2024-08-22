@@ -1,0 +1,22 @@
+@mixin theme($color-primary: green){
+    color: $color-primary;
+    border: 0.5px solid $color-primary;
+}
+
+$primary-color-2: rgba(0, 0, 0, 0.747);
+$primary-color-3: white;
+
+$color-1-a: rgb(0, 230, 0);
+$color-1-b: rgb(0, 78, 0);
+$color-1-c: rgb(49, 121, 49);
+$color-1-d: rgb(10, 131, 10);
+
+$color-2-a: rgba(0, 0, 0, 0.747);
+$color-2-b: rgba(0, 0, 0, 0.5);
+$color-2-c: #111;
+$color-2-d: #100;
+
+$color-3-a: grey;
+$color-3-b: lightgray;
+$color-3-c: silver;
+$color-3-d: rgba(255, 255, 255, 0.423);
