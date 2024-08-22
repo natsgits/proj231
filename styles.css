@@ -1,0 +1,38 @@
+.ops {
+  border: 0.5px solid orange;
+  color: orange;
+  font-size: 1.2rem;
+  font-family: "Arial, Helvetica, sans-serif";
+  font-weight: 500;
+  height: 2rem;
+  width: 2rem;
+  background-color: white;
+  border-radius: 0.2rem;
+}
+
+.nums {
+  border: 0.5px solid orange;
+  color: orange;
+  height: 2rem;
+  width: 2rem;
+  background-color: white;
+  border-radius: 0.2rem;
+}
+
+.ops:hover, .nums:hover {
+  background-color: rgb(255, 96, 39);
+}
+
+.ops:active, .nums:active {
+  background-color: rgb(185, 120, 0);
+}
+
+.nums {
+  cursor: pointer;
+}
+
+.ops {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=styles.css.map */
