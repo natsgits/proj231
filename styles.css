@@ -35,4 +35,169 @@
   cursor: pointer;
 }
 
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.parent-container {
+  height: 100vh;
+  width: 100vw;
+}
+
+header {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .logo {
+  height: 100%;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .title {
+  font-size: 1.2rem;
+  font-family: "Arial, Helvetica, sans-serif";
+  font-weight: 500;
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+}
+
+section {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .frame {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .frame .calc-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section .frame .calc-container .display {
+  height: 20rem;
+  width: 18rem;
+  grid-area: grid-one;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "grid-one-one grid-one-two grid-one-three" "grid-one-four grid-one-four grid-one-four";
+}
+section .frame .calc-container .display .entry1 {
+  background-color: rgb(185, 120, 0);
+  grid-area: grid-one-one;
+  height: 5rem;
+  width: 5rem;
+}
+section .frame .calc-container .display .operation {
+  background-color: rgb(255, 184, 53);
+  grid-area: grid-one-two;
+  height: 3rem;
+  width: 3rem;
+  align-self: center;
+  justify-self: center;
+}
+section .frame .calc-container .display .entry2 {
+  background-color: rgb(185, 120, 0);
+  grid-area: grid-one-three;
+  height: 5rem;
+  width: 5rem;
+}
+section .frame .calc-container .display .res {
+  background-color: rgb(255, 68, 0);
+  grid-area: grid-one-four;
+  height: 5rem;
+  width: 10rem;
+  grid-column: span 1/3;
+}
+section .frame .calc-container .calc-module {
+  border: 0.5px solid rgb(185, 120, 0);
+  padding: 0.5rem;
+  height: 20rem;
+  width: 18rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-areas: "mod-1 mod-2";
+}
+section .frame .calc-container .calc-module .operators {
+  grid-area: mod-1;
+}
+section .frame .calc-container .calc-module .operators .slot {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+section .frame .calc-container .calc-module .keys {
+  grid-area: mod-2;
+}
+section .frame .calc-container .calc-module .keys .keys-module {
+  display: grid;
+  gap: 1rem;
+  grid-template-areas: "key-one key-two key-three" "key-four key-five key-six" "key-seven key-eight key-nine" ". key-zero .";
+}
+section .frame .calc-container .calc-module .keys .keys-module :nth-child(1) {
+  grid-area: key-one;
+}
+section .frame .calc-container .calc-module .keys .keys-module :nth-child(2) {
+  grid-area: key-two;
+}
+section .frame .calc-container .calc-module .keys .keys-module :nth-child(3) {
+  grid-area: key-three;
+}
+section .frame .calc-container .calc-module .keys .keys-module :nth-child(4) {
+  grid-area: key-four;
+}
+section .frame .calc-container .calc-module .keys .keys-module :nth-child(5) {
+  grid-area: key-five;
+}
+section .frame .calc-container .calc-module .keys .keys-module :nth-child(6) {
+  grid-area: key-six;
+}
+section .frame .calc-container .calc-module .keys .keys-module :nth-child(7) {
+  grid-area: key-seven;
+}
+section .frame .calc-container .calc-module .keys .keys-module :nth-child(8) {
+  grid-area: key-eight;
+}
+section .frame .calc-container .calc-module .keys .keys-module :nth-child(9) {
+  grid-area: key-nine;
+}
+section .frame .calc-container .calc-module .keys .keys-module :nth-child(10) {
+  grid-area: key-zero;
+}
+
+footer {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 /*# sourceMappingURL=styles.css.map */
