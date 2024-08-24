@@ -7,6 +7,7 @@
     <title>Calculator</title>
 </head>
 <body>
+    <script src="scripts.js" defer></script>
     <div class="parent-container">
         <header>
             <div class="logo">
@@ -18,10 +19,10 @@
             <div class="frame">
                 <div class="calc-container">
                     <div class="display">
-                        <div class="entry1"></div>
-                        <div class="operation"></div>
-                        <div class="entry2"></div>
-                        <div class="res"></div>
+                        <div class="entry1" id="entry1"></div>
+                        <div class="operation" id="operation"></div>
+                        <div class="entry2" id="entry2"></div>
+                        <div class="res" id="result"></div>
                     </div>
                     <div class="calc-module">
                         <div class="operators">
@@ -31,6 +32,8 @@
                                 <button class="ops" id="multiply">*</button>
                                 <button class="ops" id="divide">/</button>
                                 <button class="ops" id="remainder">%</button>
+                                <button class="ops" id="equals">=</button>
+                                <button class="special" id="start">Start</button>
                             </div>
                         </div>
                         <div class="keys">
