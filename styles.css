@@ -1,38 +1,45 @@
-.ops {
-  border: 0.5px solid orange;
+.special {
   color: orange;
-  font-size: 1.2rem;
-  font-family: "Arial, Helvetica, sans-serif";
-  font-weight: 500;
-  height: 2rem;
-  width: 2rem;
-  background-color: white;
-  border-radius: 0.2rem;
-}
-
-.nums {
   border: 0.5px solid orange;
-  color: orange;
-  height: 2rem;
-  width: 2rem;
   background-color: white;
-  border-radius: 0.2rem;
+  height: 2rem;
+  width: 5rem;
 }
 
-.ops:hover, .nums:hover {
-  background-color: rgb(255, 96, 39);
-}
-
-.ops:active, .nums:active {
-  background-color: rgb(185, 120, 0);
-}
-
-.nums {
-  cursor: pointer;
+.special:hover {
+  color: white;
+  border: 0.5px solid orange;
+  background-color: orange;
 }
 
 .ops {
-  cursor: pointer;
+  color: gray;
+  border: 0.5px solid gray;
+  background-color: white;
+  height: 2rem;
+  width: 5rem;
+}
+
+.ops:hover {
+  color: white;
+  border: 0.5px solid gray;
+  background-color: gray;
+}
+
+.nums {
+  color: gray;
+  border: 0.5px solid gray;
+  background-color: white;
+  height: 2rem;
+  width: 5rem;
+  background-color: rgb(255, 200, 97);
+  color: rgb(80, 52, 0);
+}
+
+.nums:hover {
+  color: white;
+  border: 0.5px solid gray;
+  background-color: gray;
 }
 
 *,
@@ -43,54 +50,101 @@
   box-sizing: border-box;
 }
 
-.parent-container {
+:root {
+  font-family: "Arial, Helvetica, sans-serif";
+  font-size: 16px;
+}
+
+body {
   height: 100vh;
   width: 100vw;
 }
 
-header {
-  height: 30%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.display :nth-child(1) {
+  grid-area: grid-d-one;
 }
 
-header .logo {
-  height: 100%;
-  width: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.display :nth-child(2) {
+  grid-area: grid-d-two;
 }
 
-header .title {
-  font-size: 1.2rem;
-  font-family: "Arial, Helvetica, sans-serif";
-  font-weight: 500;
-  height: 100%;
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 4rem;
+.display :nth-child(3) {
+  grid-area: grid-d-three;
 }
 
-section {
-  height: 60%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.display :nth-child(4) {
+  grid-area: grid-d-four;
 }
-section .frame {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+.slot :nth-child(1) {
+  grid-area: grid-one-one;
 }
-section .frame .calc-container {
+
+.slot :nth-child(2) {
+  grid-area: grid-one-two;
+}
+
+.slot :nth-child(3) {
+  grid-area: grid-one-three;
+}
+
+.slot :nth-child(4) {
+  grid-area: grid-one-four;
+}
+
+.slot :nth-child(5) {
+  grid-area: grid-one-five;
+}
+
+.slot :nth-child(6) {
+  grid-area: grid-one-six;
+}
+
+.slot :nth-child(7) {
+  grid-area: grid-one-seven;
+}
+
+.keys-module :nth-child(1) {
+  grid-area: grid-two-one;
+}
+
+.keys-module :nth-child(2) {
+  grid-area: grid-two-two;
+}
+
+.keys-module :nth-child(3) {
+  grid-area: grid-two-three;
+}
+
+.keys-module :nth-child(4) {
+  grid-area: grid-two-four;
+}
+
+.keys-module :nth-child(5) {
+  grid-area: grid-two-five;
+}
+
+.keys-module :nth-child(6) {
+  grid-area: grid-two-six;
+}
+
+.keys-module :nth-child(7) {
+  grid-area: grid-two-seven;
+}
+
+.keys-module :nth-child(8) {
+  grid-area: grid-two-eight;
+}
+
+.keys-module :nth-child(9) {
+  grid-area: grid-two-nine;
+}
+
+.keys-module :nth-child(10) {
+  grid-area: grid-two-zero;
+}
+
+.parent-container {
   height: 100%;
   width: 100%;
   display: flex;
@@ -98,103 +152,122 @@ section .frame .calc-container {
   justify-content: center;
   align-items: center;
 }
-section .frame .calc-container .display {
-  height: 20rem;
-  width: 18rem;
-  grid-area: grid-one;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-areas: "grid-one-one grid-one-two grid-one-three" "grid-one-four grid-one-four grid-one-four";
+.parent-container header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30%;
 }
-section .frame .calc-container .display .entry1 {
-  background-color: rgb(185, 120, 0);
-  grid-area: grid-one-one;
-  height: 5rem;
+.parent-container header .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  height: 100%;
+}
+.parent-container header h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  height: 100%;
+  font-family: "Arial, Helvetica, sans-serif";
+  font-size: 60px;
+  font-weight: 700;
+}
+.parent-container section {
+  width: 80%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.parent-container section .frame {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.parent-container section .frame .calc-container {
+  border: 0.5px solid rgb(80, 52, 0);
+  padding: 2rem;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.parent-container section .frame .calc-container .display {
+  height: 30%;
+  width: 100%;
+  display: grid;
+  grid-template-areas: "grid-d-one grid-d-two grid-d-three" ". grid-d-four .";
+}
+.parent-container section .frame .calc-container .display .entry1 {
+  display: block;
+  background-color: gray;
+  height: 2rem;
   width: 5rem;
 }
-section .frame .calc-container .display .operation {
-  background-color: rgb(255, 184, 53);
-  grid-area: grid-one-two;
-  height: 3rem;
+.parent-container section .frame .calc-container .display .entry2 {
+  display: block;
+  background-color: gray;
+  height: 2rem;
+  width: 5rem;
+}
+.parent-container section .frame .calc-container .display .operation {
+  display: block;
+  background-color: rgb(255, 200, 97);
+  height: 2rem;
   width: 3rem;
   align-self: center;
   justify-self: center;
 }
-section .frame .calc-container .display .entry2 {
-  background-color: rgb(185, 120, 0);
-  grid-area: grid-one-three;
-  height: 5rem;
-  width: 5rem;
+.parent-container section .frame .calc-container .display .res {
+  display: block;
+  background-color: rgb(174, 113, 0);
+  height: 2rem;
+  width: 7rem;
 }
-section .frame .calc-container .display .res {
-  background-color: rgb(255, 68, 0);
-  grid-area: grid-one-four;
-  height: 5rem;
-  width: 10rem;
-  grid-column: span 1/3;
-}
-section .frame .calc-container .calc-module {
-  border: 0.5px solid rgb(185, 120, 0);
-  padding: 0.5rem;
-  height: 20rem;
-  width: 18rem;
-  display: grid;
-  gap: 1rem;
-  grid-template-areas: "mod-1 mod-2";
-}
-section .frame .calc-container .calc-module .operators {
-  grid-area: mod-1;
-}
-section .frame .calc-container .calc-module .operators .slot {
+.parent-container section .frame .calc-container .calc-module {
+  height: 70%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.2rem;
 }
-section .frame .calc-container .calc-module .keys {
-  grid-area: mod-2;
+.parent-container section .frame .calc-container .calc-module .operators {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-section .frame .calc-container .calc-module .keys .keys-module {
-  display: grid;
-  gap: 1rem;
-  grid-template-areas: "key-one key-two key-three" "key-four key-five key-six" "key-seven key-eight key-nine" ". key-zero .";
-}
-section .frame .calc-container .calc-module .keys .keys-module :nth-child(1) {
-  grid-area: key-one;
-}
-section .frame .calc-container .calc-module .keys .keys-module :nth-child(2) {
-  grid-area: key-two;
-}
-section .frame .calc-container .calc-module .keys .keys-module :nth-child(3) {
-  grid-area: key-three;
-}
-section .frame .calc-container .calc-module .keys .keys-module :nth-child(4) {
-  grid-area: key-four;
-}
-section .frame .calc-container .calc-module .keys .keys-module :nth-child(5) {
-  grid-area: key-five;
-}
-section .frame .calc-container .calc-module .keys .keys-module :nth-child(6) {
-  grid-area: key-six;
-}
-section .frame .calc-container .calc-module .keys .keys-module :nth-child(7) {
-  grid-area: key-seven;
-}
-section .frame .calc-container .calc-module .keys .keys-module :nth-child(8) {
-  grid-area: key-eight;
-}
-section .frame .calc-container .calc-module .keys .keys-module :nth-child(9) {
-  grid-area: key-nine;
-}
-section .frame .calc-container .calc-module .keys .keys-module :nth-child(10) {
-  grid-area: key-zero;
-}
-
-footer {
-  height: 10%;
+.parent-container section .frame .calc-container .calc-module .operators .slot {
   width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-areas: "grid-one-one" "grid-one-two" "grid-one-three" "grid-one-four" "grid-one-five" "grid-one-six" "grid-one-seven";
+}
+.parent-container section .frame .calc-container .calc-module .keys {
+  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.parent-container section .frame .calc-container .calc-module .keys .keys-module {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-areas: "grid-two-one grid-two-two grid-two-three" "grid-two-four grid-two-five grid-two-six" "grid-two-seven grid-two-eight grid-two-nine" ". grid-two-zero .";
+}
+.parent-container footer {
+  width: 100%;
+  height: 10%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
