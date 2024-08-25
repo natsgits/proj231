@@ -24,11 +24,11 @@ const btnop5 = document.querySelector("button#remainder");
 const btnop6 = document.querySelector("button#equals")
 
 //functions
-var init = 0;
+var counter = 0;
 function flowcontrol(){
     msgs = ["enetr first number", "enter second number", "enter operator" , ]
     let flow = 4;
-    init++;
+    counter++;
     if(init==1){
         disp4.innerText = ""
     }
