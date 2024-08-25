@@ -2,8 +2,8 @@
   color: orange;
   border: 0.5px solid orange;
   background-color: white;
-  height: 3rem;
-  width: 1.6rem;
+  height: 2rem;
+  width: 5rem;
 }
 
 .special:hover {
@@ -16,8 +16,8 @@
   color: gray;
   border: 0.5px solid gray;
   background-color: white;
-  height: 3rem;
-  width: 1.6rem;
+  height: 2rem;
+  width: 5rem;
 }
 
 .ops:hover {
@@ -30,8 +30,8 @@
   color: gray;
   border: 0.5px solid gray;
   background-color: white;
-  height: 3rem;
-  width: 1.6rem;
+  height: 2rem;
+  width: 5rem;
   background-color: rgb(255, 200, 97);
   color: rgb(80, 52, 0);
 }
@@ -50,9 +50,98 @@
   box-sizing: border-box;
 }
 
+:root {
+  font-family: "Arial, Helvetica, sans-serif";
+  font-size: 16px;
+}
+
 body {
   height: 100vh;
   width: 100vw;
+}
+
+.display :nth-child(1) {
+  grid-area: grid-d-one;
+}
+
+.display :nth-child(2) {
+  grid-area: grid-d-two;
+}
+
+.display :nth-child(3) {
+  grid-area: grid-d-three;
+}
+
+.display :nth-child(4) {
+  grid-area: grid-d-four;
+}
+
+.slot :nth-child(1) {
+  grid-area: grid-one-one;
+}
+
+.slot :nth-child(2) {
+  grid-area: grid-one-two;
+}
+
+.slot :nth-child(3) {
+  grid-area: grid-one-three;
+}
+
+.slot :nth-child(4) {
+  grid-area: grid-one-four;
+}
+
+.slot :nth-child(5) {
+  grid-area: grid-one-five;
+}
+
+.slot :nth-child(6) {
+  grid-area: grid-one-six;
+}
+
+.slot :nth-child(7) {
+  grid-area: grid-one-seven;
+}
+
+.keys-module :nth-child(1) {
+  grid-area: grid-two-one;
+}
+
+.keys-module :nth-child(2) {
+  grid-area: grid-two-two;
+}
+
+.keys-module :nth-child(3) {
+  grid-area: grid-two-three;
+}
+
+.keys-module :nth-child(4) {
+  grid-area: grid-two-four;
+}
+
+.keys-module :nth-child(5) {
+  grid-area: grid-two-five;
+}
+
+.keys-module :nth-child(6) {
+  grid-area: grid-two-six;
+}
+
+.keys-module :nth-child(7) {
+  grid-area: grid-two-seven;
+}
+
+.keys-module :nth-child(8) {
+  grid-area: grid-two-eight;
+}
+
+.keys-module :nth-child(9) {
+  grid-area: grid-two-nine;
+}
+
+.keys-module :nth-child(10) {
+  grid-area: grid-two-zero;
 }
 
 .parent-container {
@@ -63,128 +152,122 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-header {
+.parent-container header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   height: 30%;
-  width: 100%;
+}
+.parent-container header .logo {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-header .logo {
+  width: 20%;
   height: 100%;
-  width: 10%;
+}
+.parent-container header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-header .title {
   flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100%;
+  font-family: "Arial, Helvetica, sans-serif";
+  font-size: 60px;
+  font-weight: 700;
 }
-
-section {
+.parent-container section {
+  width: 80%;
   height: 60%;
-  width: 100%;
-}
-section .frame {
-  height: 100%;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-section .frame .cal-container {
+.parent-container section .frame {
+  width: 80%;
   height: 100%;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.parent-container section .frame .calc-container {
+  border: 0.5px solid rgb(80, 52, 0);
+  padding: 2rem;
+  width: 40%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-section .frame .cal-container .display {
+.parent-container section .frame .calc-container .display {
+  height: 30%;
+  width: 100%;
   display: grid;
+  grid-template-areas: "grid-d-one grid-d-two grid-d-three" ". grid-d-four .";
 }
-section .frame .cal-container .calc-module {
+.parent-container section .frame .calc-container .display .entry1 {
+  display: block;
+  background-color: gray;
+  height: 2rem;
+  width: 5rem;
+}
+.parent-container section .frame .calc-container .display .entry2 {
+  display: block;
+  background-color: gray;
+  height: 2rem;
+  width: 5rem;
+}
+.parent-container section .frame .calc-container .display .operation {
+  display: block;
+  background-color: rgb(255, 200, 97);
+  height: 2rem;
+  width: 3rem;
+  align-self: center;
+  justify-self: center;
+}
+.parent-container section .frame .calc-container .display .res {
+  display: block;
+  background-color: rgb(174, 113, 0);
+  height: 2rem;
+  width: 7rem;
+}
+.parent-container section .frame .calc-container .calc-module {
+  height: 70%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-section .frame .cal-container .calc-module .operators {
+.parent-container section .frame .calc-container .calc-module .operators {
+  height: 100%;
+  width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-section .frame .cal-container .calc-module .operators .slot {
+.parent-container section .frame .calc-container .calc-module .operators .slot {
+  width: 100%;
+  height: 100%;
   display: grid;
   grid-template-areas: "grid-one-one" "grid-one-two" "grid-one-three" "grid-one-four" "grid-one-five" "grid-one-six" "grid-one-seven";
 }
-section .frame .cal-container .calc-module .operators .slot :nth-child(1) {
-  grid-area: grid-one-one;
-}
-section .frame .cal-container .calc-module .operators .slot :nth-child(1) {
-  grid-area: grid-one-one;
-}
-section .frame .cal-container .calc-module .operators .slot :nth-child(3) {
-  grid-area: grid-one-three;
-}
-section .frame .cal-container .calc-module .operators .slot :nth-child(4) {
-  grid-area: grid-one-four;
-}
-section .frame .cal-container .calc-module .operators .slot :nth-child(5) {
-  grid-area: grid-one-five;
-}
-section .frame .cal-container .calc-module .operators .slot :nth-child(6) {
-  grid-area: grid-one-six;
-}
-section .frame .cal-container .calc-module .operators .slot :nth-child(7) {
-  grid-area: grid-one-seven;
-}
-section .frame .cal-container .calc-module .keys {
+.parent-container section .frame .calc-container .calc-module .keys {
+  flex-grow: 1;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-section .frame .cal-container .calc-module .keys .keys-module {
-  display: grid;
-  grid-template-areas: "grid-two-one grid-two-two grid-two-three" "grid-two-four grid-two-five-grid-two-six" "grid-two-seven grid-two-eight grid-two-nine" ". grid-two-ten .";
-}
-section .frame .cal-container .calc-module .keys .keys-module :nth-child(1) {
-  grid-area: grid-two-one;
-}
-section .frame .cal-container .calc-module .keys .keys-module :nth-child(2) {
-  grid-area: grid-two-two;
-}
-section .frame .cal-container .calc-module .keys .keys-module :nth-child(3) {
-  grid-area: grid-two-three;
-}
-section .frame .cal-container .calc-module .keys .keys-module :nth-child(4) {
-  grid-area: grid-two-four;
-}
-section .frame .cal-container .calc-module .keys .keys-module :nth-child(5) {
-  grid-area: grid-two-five;
-}
-section .frame .cal-container .calc-module .keys .keys-module :nth-child(6) {
-  grid-area: grid-two-six;
-}
-section .frame .cal-container .calc-module .keys .keys-module :nth-child(7) {
-  grid-area: grid-two-seven;
-}
-section .frame .cal-container .calc-module .keys .keys-module :nth-child(8) {
-  grid-area: grid-two-eight;
-}
-section .frame .cal-container .calc-module .keys .keys-module :nth-child(9) {
-  grid-area: grid-two-nine;
-}
-section .frame .cal-container .calc-module .keys .keys-module :nth-child(10) {
-  grid-area: grid-two-ten;
-}
-
-footer {
-  height: 10%;
+.parent-container section .frame .calc-container .calc-module .keys .keys-module {
   width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-areas: "grid-two-one grid-two-two grid-two-three" "grid-two-four grid-two-five grid-two-six" "grid-two-seven grid-two-eight grid-two-nine" ". grid-two-zero .";
+}
+.parent-container footer {
+  width: 100%;
+  height: 10%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
