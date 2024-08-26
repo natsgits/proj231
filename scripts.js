@@ -30,31 +30,26 @@ const btnstart = document.querySelector("button#start");
 var clickercount= 0;
 var arr=[];
 
+function ValChecker(){
+    let regex = /[0-9\+\-\*\/\%]/g;
+    let val = arr.slice(-1).match(regex);
+    if(val!==null){
+        if(val  == '+' || val == '-' || val == '*' || val == '/'){
+            counter++;
+        }
+    }
+    else{
+        
+    }
+}
+
 
 function flowcontrol(){
     let counter = 0;
-    let e1=0;
-    let e2=0;
-    let res=0;
-    let regex = /[0-9]/g;
-    let regexop = /[^0-9]/g;
-    msgs = ["enter first number and click next", "enter second number", "enter operator", "result = " ]
-    let flow = 4;
-    
-        if(counter==1){
-            disp4.innerText = msgs[0];
-            if(arr.slice(-1).match(regexop)!==null){
-                e1 = Number(arr.slice(0,arr.length-1).join(''));
-                counter++; 
-            }
-        }
-        if(counter==2){
-            disp4.innerText = msgs[1];
-        }
-
-    
-    
-    
+    msgs = ["Press start","enter first number and click next", "enter second number", "enter operator", "result = " ]
+    let flow = 5;
+   
+    counter++;
 }
 
 //adding event-listeners
@@ -110,28 +105,32 @@ btn10.addEventListener('click',()=>{
     clickercount++;
 })
 
+btnstart.addEventListener('click',()=>{
+    arr.push(null);
+})
+
 btnop1.addEventListener('click',()=>{
-    arr1.push('+');
+    arr.push('+');
     clickercount++;
 })
 
 btnop2.addEventListener('click',()=>{
-    arr1.push('-');
+    arr.push('-');
     clickercount++;
 })
 
 btnop3.addEventListener('click',()=>{
-    arr1.push('*');
+    arr.push('*');
     clickercount++;
 })
 
 btnop4.addEventListener('click',()=>{
-   arr1.push('/');
+   arr.push('/');
    clickercount++;
 })
 
 btnop5.addEventListener('click',()=>{
-    arr1.push('%');
+    arr.push('%');
     clickercount++;
 })
 
