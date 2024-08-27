@@ -144,6 +144,10 @@ body {
   grid-area: grid-two-zero;
 }
 
+.keys-module :nth-child(11) {
+  grid-area: grid-two-nex;
+}
+
 .parent-container {
   height: 100%;
   width: 100%;
@@ -263,7 +267,7 @@ body {
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-areas: "grid-two-one grid-two-two grid-two-three" "grid-two-four grid-two-five grid-two-six" "grid-two-seven grid-two-eight grid-two-nine" ". grid-two-zero .";
+  grid-template-areas: "grid-two-one grid-two-two grid-two-three" "grid-two-four grid-two-five grid-two-six" "grid-two-seven grid-two-eight grid-two-nine" ". grid-two-zero grid-two-nex";
 }
 .parent-container footer {
   width: 100%;
