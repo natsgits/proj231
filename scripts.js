@@ -38,6 +38,15 @@ var arr=[];
 
 //Math operations
 
+function operation(){
+    if(operator == '+'){
+        add(e1,e2);
+    }
+    if(operator == '-'){
+        subtract(e1,e2);
+    }
+}
+
 function add(num1,num2){
     let Bnum1;
     let Bnum2;
@@ -102,29 +111,71 @@ function ValChecker() {
 
 function flowcontrol(){
     let counter = 0;
-    msgs = ["Press start","enter first number and click next", "enter second number and click next", "enter operator and click = ", `result = ${} ${} ${} = ${} ` ]
+    let i = arr.length-1;
+    msgs = ["Press start","enter first number and click next", "enter second number and click next", "enter operator and click = ", `result = ` ]
     let flow = 5;
 
     if(counter == 0){
         disp4.innerText=msgs[0];
-        let check = ValChecker();
-        while(check!==null){
-            clickercount++;
+        counter++;
         }
-        
+    
+    if(counter == 1){
+        disp4.innerText = msgs[1];
+        while(ValChecker()!==null){
+            let val1 = arr.slice(arr[arr.length-1]-arr[i]).join('');
+            disp1.innerText = Number.parseInt(val1); 
+        }
+        if(ValChecker()===null){
+            i=arr.length-1;
+            counter++;
+            e1 = val1;
+        }
+    }
+    
+    if(counter == 2){
+        disp4.innerText = msgs[2];
+        while(ValChecker()!== null){
+            let val2 = arr.slice(arr[arr.length-1],arr[i]).join('');
+            disp2.innerText = Number.parseInt(val2);
+        }
+        if(ValChecker() === null){
+            i = arr.length-1;
+            counter++;
+            e2 = val2;
+        }
+    }
+      
+   if(counter == 3) {
+        disp4.innerText = msgs[3];
+        if(arr.slice(-1)=='+' || arr.slice(-1) == '-' || arr.slice(-1) == '*' || arr.slice(-1) == '/' || arr.slice(-1) == '%'){
+            operator = arr.slice(-1);
+            disp3.innerText = operator;
+            counter++;
+        }
+        else{
+            disp4.innerText = "Wrong entry - click on any operator (+,-,*,/,%) button";
+        }
+  } 
+
+  if(counter==4){
+    result = operation();    
+    disp4.innerText = msgs[4] +`${e1} + ${operator} + ${e2} => ${result} `;   
+    counter = 0        
+  }
     }   
     
     
-    while(counter<flow){
+    // while(counter<flow){
         
          
-         if(check == '$'){
-            counter = 0;
-            return;
-         }
-    }
-    counter++;
-}
+    //      if(check == '$'){
+    //         counter = 0;
+    //         return;
+    //      }
+    // }
+    // counter++;
+
 
 
 
