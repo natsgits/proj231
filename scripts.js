@@ -94,90 +94,10 @@ function subtract(num1,num2){
 
 
 function ValChecker() {
-    let regex = /[0-9+-*\/%$]/g;
+    let regex = /[0-9\+\-\*\/\%\$]/g;
     let val = arr.slice(-1).match(regex);
     return val;
 } 
-    
-    // if(val!==null){
-    //     if(val  == '+' || val == '-' || val == '*' || val == '/'){
-    //         counter++;
-    //     }
-    // }
-    // else{
-
-    // }
-
-
-function flowcontrol(){
-    let counter = 0;
-    let i = arr.length-1;
-    msgs = ["Press start","enter first number and click next", "enter second number and click next", "enter operator and click = ", `result = ` ]
-    let flow = 5;
-
-    if(counter == 0){
-        disp4.innerText=msgs[0];
-        counter++;
-        }
-    
-    if(counter == 1){
-        disp4.innerText = msgs[1];
-        while(ValChecker()!==null){
-            let val1 = arr.slice(arr[arr.length-1]-arr[i]).join('');
-            disp1.innerText = Number.parseInt(val1); 
-        }
-        if(ValChecker()===null){
-            i=arr.length-1;
-            counter++;
-            e1 = val1;
-        }
-    }
-    
-    if(counter == 2){
-        disp4.innerText = msgs[2];
-        while(ValChecker()!== null){
-            let val2 = arr.slice(arr[arr.length-1],arr[i]).join('');
-            disp2.innerText = Number.parseInt(val2);
-        }
-        if(ValChecker() === null){
-            i = arr.length-1;
-            counter++;
-            e2 = val2;
-        }
-    }
-      
-   if(counter == 3) {
-        disp4.innerText = msgs[3];
-        if(arr.slice(-1)=='+' || arr.slice(-1) == '-' || arr.slice(-1) == '*' || arr.slice(-1) == '/' || arr.slice(-1) == '%'){
-            operator = arr.slice(-1);
-            disp3.innerText = operator;
-            counter++;
-        }
-        else{
-            disp4.innerText = "Wrong entry - click on any operator (+,-,*,/,%) button";
-        }
-  } 
-
-  if(counter==4){
-    result = operation();    
-    disp4.innerText = msgs[4] +`${e1} + ${operator} + ${e2} => ${result} `;   
-    counter = 0        
-  }
-    }   
-    
-    
-    // while(counter<flow){
-        
-         
-    //      if(check == '$'){
-    //         counter = 0;
-    //         return;
-    //      }
-    // }
-    // counter++;
-
-
-
 
 //adding event-listeners
 
