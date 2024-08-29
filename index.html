@@ -4,57 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title><Sign-in></Sign-in></title>
+    <title>Sign-in</title>
 </head>
 <body>
+    <script defer src="scripts.js"></script>
     <div class="parent-container">
         <header>
             <div class="logo">
                 <img src="/assets/icons8-logo-50 (3).png" alt="logo">
             </div>
             <h1>Registration Form</h1>
+            <div class="clock">
+                <span class="hrs" id="hr"></span>
+                <span>:</span>
+                <span class="mins" id="min"></span>
+            </div>
         </header>
         <section>
             <div class="Form-container">
-                <form action="/" method="get" name ="PageForm">
+                <form action="/" method="get" name ="PageForm" id="pageform">
                     <div class="Fields">
                         <label for="fname">First Name<sup>*</sup></label>
-                        <input type="text" name="FirstName" id="fname" placeholder="Enter first name">
+                        <input type="text" name="FirstName" id="fname" placeholder="Enter first name" required>
                     </div>
                     <div class="Fields">
                         <label for="lname">Last Name<sup>*</sup></label>
-                        <input type="text" name="LastName" id="lname" placeholder="Enter last name">
+                        <input type="text" name="LastName" id="lname" placeholder="Enter last name" required>
                     </div>  
                     <div class="Fields">
                         <label for="age">Age<sup>*</sup></label>
-                        <input type="number" name="Age" id="age" placeholder="Enter your age">
+                        <input type="number" name="Age" id="age" placeholder="Enter your age" required>
                     </div>
                     <div class="Fields">
                         <label for="gender">Gender<sup>*</sup></label>
-                        <select name="Gender" id="gender">
-                            <option value="" name="Gender">-Select gender</option>
+                        <select name="Gender" id="gender" required>
+                            <option value="" name="Gender" selected disabled>-Select gender</option>
                             <option value="M" name="Gender">Male</option>
                             <option value="F" name="Gender">Female</option>
                         </select>
                     </div>
                     <div class="Fields">
                         <label for="dob">Date of birth<sup>*</sup></label>
-                        <input type="date" name="DOB" id="dob">
+                        <input type="date" name="DOB" id="dob" required>
                     </div>
                     <div class="Fields">
                         <span>Nationality</span>
                         <label for="Indian" name ="nationality">Indian</label>
-                        <input type="radio" name="nationality" id="Indian">
+                        <input type="radio" name="nationality" id="Indian" required>
                         <label for="NRI" name ="nationality">NRI</label>
                         <input type="radio" name="nationality" id="NRI">
                     </div>
                     <div class="Fields">
                         <label for="ph-no">Phone-Number<sup>*</sup></label>
-                        <input type="tel" name = "ph-no" id = "ph-no" placeholder="Enter your phone number">
+                        <input type="tel" name = "ph-no" id = "ph-no" placeholder="Enter your phone number" required>
                     </div>
                     <p class="legend"><sup>*</sup>Fields are mandatory</p>
                     <button class="formbtn" type="submit" id="btn-1">Submit</button>
                 </form>
+                <div class="errors" id="error"></div>
             </div>
         </section>
         <footer>&copy;2024 All rights reserved</footer>
