@@ -1,152 +1,3 @@
-form {
-  color: green;
-  border: 0.5px solid green;
-  box-shadow: 0.4rem 0.4rem green;
-  height: 80%;
-  border: none;
-  box-shadow: initial;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.2rem;
-}
-form .Fields {
-  padding: 0 1rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: center;
-  gap: 0.2rem;
-}
-form .Fields sup {
-  color: green;
-  border: 0.5px solid green;
-  box-shadow: 0.4rem 0.4rem green;
-  font-family: "Arial, Helvetica, sans-serif";
-  box-shadow: initial;
-  border: none;
-}
-form .Fields p {
-  color: green;
-  border: 0.5px solid green;
-  box-shadow: 0.4rem 0.4rem green;
-  font-family: "Arial, Helvetica, sans-serif";
-  box-shadow: initial;
-  border: none;
-}
-form .Fields label {
-  color: green;
-  border: 0.5px solid green;
-  box-shadow: 0.4rem 0.4rem green;
-  font-family: "Arial, Helvetica, sans-serif";
-  border: none;
-  box-shadow: initial;
-  justify-self: center;
-  align-self: start;
-}
-form .Fields input[type=text] {
-  padding-left: 0.4rem;
-  height: 1.8rem;
-  width: 80%;
-  justify-self: left;
-  align-self: start;
-}
-form .Fields input[type=text] ::placeholder {
-  font-size: 1rem;
-  padding-left: 1rem;
-  color: #fff;
-}
-form .Fields input[type=text]:focus {
-  background-color: rgb(0, 230, 0);
-  color: #fff;
-}
-form .Fields input[type=tel] {
-  padding-left: 0.4rem;
-  height: 1.8rem;
-  width: 80%;
-  justify-self: left;
-  align-self: start;
-}
-form .Fields input[type=tel] ::placeholder {
-  font-size: 1rem;
-  padding-left: 1rem;
-  color: #fff;
-}
-form .Fields input[type=tel]:focus {
-  background-color: rgb(0, 230, 0);
-  color: #fff;
-}
-form .Fields input[type=date] {
-  padding-left: 0.4rem;
-  height: 1.8rem;
-  width: 80%;
-  justify-self: left;
-  align-self: start;
-}
-form .Fields input[type=date] ::placeholder {
-  font-size: 1rem;
-  padding-left: 1rem;
-  color: #fff;
-}
-form .Fields input[type=date]:focus {
-  background-color: rgb(0, 230, 0);
-  color: #fff;
-}
-form .Fields input[type=number] {
-  padding-left: 0.4rem;
-  height: 1.8rem;
-  width: 80%;
-  justify-self: left;
-  align-self: start;
-}
-form .Fields input[type=number] ::placeholder {
-  font-size: 1rem;
-  padding-left: 1rem;
-  color: #fff;
-}
-form .Fields input[type=number]:focus {
-  background-color: rgb(0, 230, 0);
-  color: #fff;
-}
-form .Fields select {
-  width: 80%;
-  height: 1.6rem;
-  align-self: start;
-}
-form .Fields:nth-child(6) {
-  flex-direction: initial;
-  height: 6rem;
-  padding: 0 1rem;
-}
-form .Fields:nth-child(6) :nth-child(n) {
-  padding-right: 1rem;
-}
-form .errors {
-  width: 100%;
-  height: 2rem;
-}
-form p.legend {
-  align-self: last baseline;
-  padding-right: 1rem;
-}
-form button.formbtn {
-  height: 2rem;
-  width: 5rem;
-  font-size: 1rem;
-  border-radius: 0.6rem;
-  border: none;
-  cursor: pointer;
-  align-self: last baseline;
-  background-color: rgb(0, 78, 0);
-  color: #fff;
-}
-form button.formbtn:hover {
-  background-color: rgb(0, 230, 0);
-}
-
 *,
 *::before,
 *::after {
@@ -222,7 +73,16 @@ body {
   width: 40%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
+}
+.parent-container section .Form-container form {
+  width: 100%;
+}
+.parent-container section .Form-container .errors {
+  padding-top: 6rem;
+  width: 100%;
+  height: 2rem;
 }
 .parent-container footer {
   height: 10%;
@@ -230,6 +90,160 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+
+form {
+  color: green;
+  border: 0.5px solid green;
+  box-shadow: 0.4rem 0.4rem green;
+  height: 80%;
+  border: none;
+  box-shadow: initial;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+}
+form .Fields {
+  padding: 0 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+  gap: 0.2rem;
+}
+form .Fields sup {
+  color: green;
+  border: 0.5px solid green;
+  box-shadow: 0.4rem 0.4rem green;
+  font-family: "Arial, Helvetica, sans-serif";
+  box-shadow: initial;
+  border: none;
+}
+form .Fields p {
+  color: green;
+  border: 0.5px solid green;
+  box-shadow: 0.4rem 0.4rem green;
+  font-family: "Arial, Helvetica, sans-serif";
+  box-shadow: initial;
+  border: none;
+}
+form .Fields label {
+  color: green;
+  border: 0.5px solid green;
+  box-shadow: 0.4rem 0.4rem green;
+  font-family: "Arial, Helvetica, sans-serif";
+  border: none;
+  box-shadow: initial;
+  justify-self: center;
+  align-self: start;
+  width: 100%;
+}
+form .Fields input[type=text] {
+  padding-left: 0.4rem;
+  height: 1.8rem;
+  width: 100%;
+  justify-self: left;
+  align-self: start;
+}
+form .Fields input[type=text] ::placeholder {
+  font-size: 1rem;
+  padding-left: 1rem;
+  color: #fff;
+}
+form .Fields input[type=text]:focus {
+  background-color: rgb(0, 230, 0);
+  color: #fff;
+}
+form .Fields input[type=tel] {
+  padding-left: 0.4rem;
+  height: 1.8rem;
+  width: 100%;
+  justify-self: left;
+  align-self: start;
+}
+form .Fields input[type=tel] ::placeholder {
+  font-size: 1rem;
+  padding-left: 1rem;
+  color: #fff;
+}
+form .Fields input[type=tel]:focus {
+  background-color: rgb(0, 230, 0);
+  color: #fff;
+}
+form .Fields input[type=date] {
+  padding-left: 0.4rem;
+  height: 1.8rem;
+  width: 100%;
+  justify-self: left;
+  align-self: start;
+}
+form .Fields input[type=date] ::placeholder {
+  font-size: 1rem;
+  padding-left: 1rem;
+  color: #fff;
+}
+form .Fields input[type=date]:focus {
+  background-color: rgb(0, 230, 0);
+  color: #fff;
+}
+form .Fields input[type=number] {
+  padding-left: 0.4rem;
+  height: 1.8rem;
+  width: 100%;
+  justify-self: left;
+  align-self: start;
+}
+form .Fields input[type=number] ::placeholder {
+  font-size: 1rem;
+  padding-left: 1rem;
+  color: #fff;
+}
+form .Fields input[type=number]:focus {
+  background-color: rgb(0, 230, 0);
+  color: #fff;
+}
+form .Fields select {
+  width: 100%;
+  height: 1.6rem;
+  align-self: start;
+}
+form .Fields:nth-child(6) {
+  padding: 1.3rem;
+  flex-direction: row;
+}
+form .Fields:nth-child(6) input[type=radio] {
+  padding-right: 1rem;
+}
+form .Fields:nth-child(6) :nth-child(n) {
+  justify-self: center;
+  padding-right: 1rem;
+  width: 30%;
+}
+form p.legend {
+  width: 80%;
+  align-self: flex-start;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+form button.formbtn {
+  height: 1.4rem;
+  width: 5rem;
+  font-size: 1rem;
+  padding: 0.2rem;
+  border-radius: 0.6rem;
+  border: none;
+  cursor: pointer;
+  align-self: flex-end;
+  background-color: rgb(0, 78, 0);
+  color: #fff;
+  margin-right: 1rem;
+}
+form button.formbtn:hover {
+  background-color: rgb(10, 131, 10);
 }
 
 /*# sourceMappingURL=styles.css.map */
