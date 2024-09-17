@@ -1,0 +1,5 @@
+@mixin theme1fonts($font-stack-1: "Arial, Helvetica, sans-serif"){
+    font-family: $font-stack-1;
+}
+
+$font-stack2: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";

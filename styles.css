@@ -76,6 +76,10 @@ body {
   grid-area: grid-d-four;
 }
 
+.display :nth-child(5) {
+  grid-area: grid-d-five;
+}
+
 .slot :nth-child(1) {
   grid-area: grid-one-one;
 }
@@ -197,7 +201,7 @@ body {
 .parent-container section .frame .calc-container {
   border: 0.5px solid rgb(80, 52, 0);
   padding: 2rem;
-  width: 40%;
+  min-width: 40%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -205,33 +209,50 @@ body {
   align-items: center;
 }
 .parent-container section .frame .calc-container .display {
-  height: 30%;
+  height: 35%;
   width: 100%;
   display: grid;
-  grid-template-areas: "grid-d-one grid-d-two grid-d-three" ". grid-d-four .";
+  grid-template-areas: "grid-d-four grid-d-four grid-d-four" "grid-d-one grid-d-two grid-d-three" ". grid-d-five .";
 }
 .parent-container section .frame .calc-container .display .entry1 {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: gray;
   height: 2rem;
-  width: 5rem;
+  width: 7rem;
 }
 .parent-container section .frame .calc-container .display .entry2 {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: gray;
   height: 2rem;
-  width: 5rem;
+  width: 7rem;
 }
 .parent-container section .frame .calc-container .display .operation {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgb(255, 200, 97);
   height: 2rem;
-  width: 3rem;
-  align-self: center;
+  width: 5rem;
   justify-self: center;
 }
+.parent-container section .frame .calc-container .display .instruction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  height: 2rem;
+  width: 100%;
+  background-color: orangered;
+  color: white;
+}
 .parent-container section .frame .calc-container .display .res {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgb(174, 113, 0);
   height: 2rem;
   width: 7rem;

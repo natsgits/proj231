@@ -1,0 +1,44 @@
+@use "module_buttons";
+@use "module_colors";
+@mixin theme-buttons($color-primary-1: orange){
+    color: $color-primary-1;
+    border: 0.5px solid $color-primary-1; 
+    background-color: white;
+}
+@mixin theme-buttons-hover($color-primary-hover: orange){
+    color: white;
+    border: 0.5px solid $color-primary-hover;
+    background-color: $color-primary-hover;
+}
+
+.special{
+    @include theme-buttons;
+    height: module_buttons.$button-size-2-height;
+    width: module_buttons.$button-size-2-width;
+}
+
+.special:hover{
+    @include theme-buttons-hover;
+}
+
+.ops{
+    @include theme-buttons($color-primary-1: gray);
+    height: module_buttons.$button-size-2-height;
+    width: module_buttons.$button-size-2-width;
+}
+
+.ops:hover{
+    @include theme-buttons-hover($color-primary-hover: gray);
+}
+
+.nums{
+    @include theme-buttons($color-primary-1: gray);
+    height: module_buttons.$button-size-2-height;
+    width: module_buttons.$button-size-2-width;
+    background-color: module_colors.$primary-color-1-b;
+    color: module_colors.$primary-color-1-d;
+}
+
+.nums:hover{
+    @include theme-buttons-hover($color-primary-hover: gray);
+}

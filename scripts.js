@@ -3,7 +3,8 @@
 const disp1 = document.getElementById('entry1');
 const disp2 = document.getElementById('operation');
 const disp3 = document.getElementById('entry2');
-const disp4 = document.getElementById('res');
+const disp4 = document.getElementById('ins');
+const disp5 = document.getElementById('res');
 
 const btn1 = document.querySelector('button#one');
 const btn2 = document.querySelector('button#two');
@@ -25,172 +26,135 @@ const btnop5 = document.querySelector("button#remainder");
 const btnop6 = document.querySelector("button#equals")
 const btnstart = document.querySelector("button#start");
 
-//global variables
-
-var e1;
-var e2;
-var result;
-var operator;
-
-var clickercount= 0;
-var arr=[];
 //functions
-
-//Math operations
-
-function operation(){
-    if(operator == '+'){
-        add(e1,e2);
-    }
-    if(operator == '-'){
-        subtract(e1,e2);
-    }
-}
-
-function add(num1,num2){
-    let Bnum1;
-    let Bnum2;
-    let res;
-    if(num1 >= Number.MIN_SAFE_INTEGER/2 || num2 >= Number.MIN_SAFE_INTEGER){
-        Bnum1 = BigInt(num1);
-        Bnum2 = BigInt(num2);
-        res = Bnum1 + Bnum2;
-    }
-    else{
-        res = num1+num2;
-    }
-    return res;
-}
-
-function subtract(num1,num2){
-    let Bnum1;
-    let Bnum2;
-    let res;
-    if(num1 >= Number.MIN_SAFE_INTEGER/2 || num2 >= Number.MIN_SAFE_INTEGER){
-        Bnum1 = BigInt(num1);
-        Bnum2 = BigInt(num2);
-        if(Bnum1 < Bnum2){
-            res = "second number is larger"
-        }
-        else{
-            res = Bnum1 - Bnum2
-        }
-    }
-    else{
-        if(num1 < num2){
-            res = "second number is larger"
-        }
-        else{
-            res = num1 - num2;
-        }
-    }
-    return res;
-}
+var counter=0;
+const msgs = ["Press Start","Enter the first numeral and click 'Next'","Enter the second numeral and click 'Next'","Enter the operation","Press '='"];  
+var entry = [];
 
 
+function FlowControl(inp,callback){
+         
+ }
 
+ 
 
-//flow control
-
-
-function ValChecker() {
-    let regex = /[0-9\+\-\*\/\%\$]/g;
-    let val = arr.slice(-1).match(regex);
-    return val;
-} 
-
-//adding event-listeners
-
-
-btn1.addEventListener('click',()=>{
-    arr.push('1');
+ function entry(val,callback){
     
-})
+ }
 
-btn2.addEventListener('click',()=>{
-    arr.push('2');
-    clickercount++;
-})
+ function sum(entry1, entry2){
+    return entry1 + entry2;
+ }
 
-btn3.addEventListener('click',()=>{
-    arr.push('3');
-    clickercount++;
-})
+ function sub(entry1,entry2){
+    return entry1 - entry2;
+ }
 
-btn4.addEventListener('click',()=>{
-    arr.push('4');
-    clickercount++;
-})
+ function mul(entry1,entry2){
+    return entry1*entry2;
+ }
 
-btn5.addEventListener('click',()=>{
-    arr.push('5');
-    clickercount++;
-})
+ function div(entry1,entry2){
+    return entry1/entry2;
+ }
 
-btn6.addEventListener('click',()=>{
-    arr.push('6');
-    clickercount++;
-})
+ function mod(entry1,entry2){
+    return entry1%entry2;
+ }
 
-btn7.addEventListener('click',()=>{
-    arr.push('7');
-    clickercount++;
-})
-
-btn8.addEventListener('click',()=>{
-    arr.push('8');
-    clickercount++;
-})
-
-btn9.addEventListener('click',()=>{
-    arr.push('9');
-    clickercount++;
-})
-
-btn10.addEventListener('click',()=>{
-    arr.push('0');
-    clickercount++;
+//adding eventlisteners
+btnstart.addEventListener('click',()=>{
+   FlowControl(,())
 })
 
 btnex.addEventListener('click',()=>{
-    arr.push(null);
-    clickercount++;
+    
 })
 
+btn1.addEventListener('click',()=>{
+
+})
+
+btn2.addEventListener('click',()=>{
+
+})
+
+btn3.addEventListener('click',()=>{
+
+})
+
+btn4.addEventListener('click',()=>{
+
+})
+
+btn5.addEventListener('click',()=>{
+
+})
+
+btn6.addEventListener('click',()=>{
+
+})
+
+btn7.addEventListener('click',()=>{
+
+})
+
+btn8.addEventListener('click',()=>{
+
+})
+
+btn9.addEventListener('click',()=>{
+
+})
+
+btn10.addEventListener('click',()=>{
+
+})
 
 btnop1.addEventListener('click',()=>{
-    arr.push('+');
-    clickercount++;
+
 })
 
 btnop2.addEventListener('click',()=>{
-    arr.push('-');
-    clickercount++;
+
 })
 
 btnop3.addEventListener('click',()=>{
-    arr.push('*');
-    clickercount++;
+
 })
 
 btnop4.addEventListener('click',()=>{
-   arr.push('/');
-   clickercount++;
+
 })
 
 btnop5.addEventListener('click',()=>{
-    arr.push('%');
-    clickercount++;
+
 })
 
 btnop6.addEventListener('click',()=>{
-    operation();
+  FlowControl(0,(entry1,entry2,op)=>{
+    switch(op){
+        case (op=='+'):{
+            sum(entry1,entry2);
+            break;
+        }
+        case (op=='-'):{
+            sub(entry1,entry2);
+            break;
+        }
+        case (op=='*'):{
+            mul(entry1,entry2);
+            break;
+        }
+        case (op =='/'):{
+            div(entry1,entry2);
+            break;
+        }
+        case (op == '%'):{
+            mod(entry1,entry2);
+            break;
+        }
+        default:console.log(res);
+    }
+  })
 })
-
-btnstart.addEventListener('click',()=>{
-    arr.push('$');
-    flowcontrol();
-})
-
-
-

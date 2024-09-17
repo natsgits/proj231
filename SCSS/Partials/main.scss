@@ -1,0 +1,267 @@
+@use "module_colors";
+@use "module_containers";
+@use "module_fonts";
+@use "module_fontsize";
+@import "buttons";
+@import "module_fonts";
+
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    @include theme1fonts;
+    font-size: module_fontsize.$fonts-size-1;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+.display :nth-child(1){
+    grid-area: grid-d-one;
+}
+
+.display :nth-child(2){
+    grid-area: grid-d-two;
+}
+
+.display :nth-child(3){
+    grid-area: grid-d-three;
+}
+
+.display :nth-child(4){
+    grid-area: grid-d-four;
+}
+
+.display :nth-child(5){
+    grid-area: grid-d-five;
+}
+
+.slot :nth-child(1){
+    grid-area: grid-one-one;
+}
+
+.slot :nth-child(2){
+    grid-area: grid-one-two;
+}
+
+.slot :nth-child(3){
+    grid-area: grid-one-three;
+}
+
+.slot :nth-child(4){
+    grid-area: grid-one-four;
+}
+
+.slot :nth-child(5){
+    grid-area: grid-one-five;
+}
+
+.slot :nth-child(6){
+    grid-area: grid-one-six;
+}
+
+.slot :nth-child(7){
+    grid-area: grid-one-seven;
+}
+
+.keys-module :nth-child(1){
+    grid-area: grid-two-one;
+}
+
+.keys-module :nth-child(2){
+    grid-area: grid-two-two;
+}
+
+.keys-module :nth-child(3){
+    grid-area: grid-two-three;
+}
+
+.keys-module :nth-child(4){
+    grid-area: grid-two-four;
+}
+
+.keys-module :nth-child(5){
+    grid-area: grid-two-five;
+}
+
+.keys-module :nth-child(6){
+    grid-area: grid-two-six;
+}
+
+.keys-module :nth-child(7){
+    grid-area: grid-two-seven;
+}
+
+.keys-module :nth-child(8){
+    grid-area: grid-two-eight;
+}
+
+.keys-module :nth-child(9){
+    grid-area: grid-two-nine;
+}
+
+.keys-module :nth-child(10){
+    grid-area: grid-two-zero;
+}
+
+.keys-module :nth-child(11){
+    grid-area: grid-two-nex;
+}
+
+.parent-container{
+    height: module_containers.$cont-height-def;
+    width: module_containers.$cont-width-def;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: module_containers.$cont-width-def;
+        height: 30%;
+        .logo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 20%;
+            height: module_containers.$cont-height-def;
+        }
+        h1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+            height: module_containers.$cont-height-def;
+            @include theme1fonts;
+            font-size: 60px;
+            font-weight: 700;
+        }
+    }
+    section{
+        width: 80%;
+        height: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .frame{
+            width: 80%;
+            height: module_containers.$cont-height-def;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .calc-container{
+                border: 0.5px solid module_colors.$primary-color-1-d;
+                padding: 2rem;
+                min-width: 40%;
+                height: module_containers.$cont-height-def;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .display{
+                    height: 35%;
+                    width: module_containers.$cont-width-def;
+                    display: grid;
+                    grid-template-areas: "grid-d-four grid-d-four grid-d-four""grid-d-one grid-d-two grid-d-three" ". grid-d-five .";
+                    .entry1{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: gray;
+                        height: module_containers.$cont-height-3;
+                        width: module_containers.$cont-width-3;
+                    }
+                    .entry2{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: gray;
+                        height: module_containers.$cont-height-3;
+                        width: module_containers.$cont-width-3;
+                    }
+                    .operation{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: module_colors.$primary-color-1-b;
+                        height: module_containers.$cont-height-2;
+                        width: module_containers.$cont-width-2;
+                        // align-self: center;
+                        justify-self: center;
+                    }
+                    .instruction{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        // margin-top: 0.8rem;
+                        margin-bottom: 0.8rem;
+                        height: module_containers.$cont-height-3;
+                        width: 100%;
+                        background-color: module_colors.$primary-color-2;
+                        color: white;
+                    }
+                    .res{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: module_colors.$primary-color-1-c;
+                        height: module_containers.$cont-height-3;
+                        width: module_containers.$cont-width-3;
+                    }
+                }
+                .calc-module{
+                    
+                    height: 70%;
+                    width: module_containers.$cont-width-def;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .operators{
+                        height: module_containers.$cont-height-def;
+                        width: 30%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .slot{
+                            width: module_containers.$cont-width-def;
+                            height: module_containers.$cont-height-def;
+                            display: grid;
+                            grid-template-areas: "grid-one-one" "grid-one-two" "grid-one-three" "grid-one-four" "grid-one-five" "grid-one-six" "grid-one-seven";
+                        }
+                    }
+                    .keys{
+                        flex-grow: 1;
+                        height: module_containers.$cont-height-def;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .keys-module{
+                            width: module_containers.$cont-width-def;
+                            height: module_containers.$cont-height-def;
+                            display: grid;
+                            grid-template-areas: "grid-two-one grid-two-two grid-two-three" "grid-two-four grid-two-five grid-two-six" "grid-two-seven grid-two-eight grid-two-nine" ". grid-two-zero grid-two-nex";
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer{
+        width: module_containers.$cont-width-def;
+        height: 10%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;      
+    }
+}
+
