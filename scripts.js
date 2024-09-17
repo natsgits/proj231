@@ -30,16 +30,23 @@ const btnstart = document.querySelector("button#start");
 var counter=0;
 const msgs = ["Press Start","Enter the first numeral and click 'Next'","Enter the second numeral and click 'Next'","Enter the operation","Press '='"];  
 var entry = [];
-
+var ent;
 
 function FlowControl(inp,callback){
-         
+    counter++;
+    callback(inp);
  }
 
- 
+function FlowEval(ent,callback){ 
+    while(ent!=='$'){
+        callback(ent);
+    }
+}
 
  function entry(val,callback){
-    
+        entry.push(val);
+        let val = entry.slice(-1);
+        callback(val);
  }
 
  function sum(entry1, entry2){
@@ -64,71 +71,71 @@ function FlowControl(inp,callback){
 
 //adding eventlisteners
 btnstart.addEventListener('click',()=>{
-   FlowControl(,())
+    FlowControl(1,(FlowEval()))
 })
 
 btnex.addEventListener('click',()=>{
-    
+    entry('$',()=>{FlowEval()});
 })
 
 btn1.addEventListener('click',()=>{
-
+    entry('1',()=>{FlowEval()});
 })
 
 btn2.addEventListener('click',()=>{
-
+    entry('2',()=>{FlowEval()});
 })
 
 btn3.addEventListener('click',()=>{
-
+    entry('3',()=>{FlowEval()});
 })
 
 btn4.addEventListener('click',()=>{
-
+    entry('4',()=>{FlowEval()});
 })
 
 btn5.addEventListener('click',()=>{
-
+    entry('5',()=>{FlowEval()});
 })
 
 btn6.addEventListener('click',()=>{
-
+    entry('6',()=>{FlowEval()});
 })
 
 btn7.addEventListener('click',()=>{
-
+    entry('7',()=>{FlowEval()});
 })
 
 btn8.addEventListener('click',()=>{
-
+    entry('8',()=>{FlowEval()});
 })
 
 btn9.addEventListener('click',()=>{
-
+    entry('9',()=>{FlowEval()});
 })
 
 btn10.addEventListener('click',()=>{
-
+    entry('0',()=>{FlowEval()});
 })
 
 btnop1.addEventListener('click',()=>{
-
+    entry('+',()=>{FlowEval()});
 })
 
 btnop2.addEventListener('click',()=>{
-
+    entry('-',()=>{FlowEval()});
 })
 
 btnop3.addEventListener('click',()=>{
-
+    entry('*',()=>{FlowEval()});
 })
 
 btnop4.addEventListener('click',()=>{
-
+    entry('/',()=>{FlowEval()});
 })
 
 btnop5.addEventListener('click',()=>{
-
+    entry('%',()=>{FlowEval()});
 })
 
 btnop6.addEventListener('click',()=>{
