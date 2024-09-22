@@ -29,27 +29,58 @@ const btnstart = document.querySelector("button#start");
 //functions
 var counter=0;
 const msgs = ["Press Start","Enter the first numeral and click 'Next'","Enter the second numeral and click 'Next'","Enter the operation","Press '='"];  
-var entry = [];
+var enter = [];
 var ent;
+var inp = 0;
+var res = "";
 
-function FlowControl(inp,callback){
-    counter++;
-    callback(inp);
- }
+function FlowEval(func){
+   let entryVal = func;
+   res = res + entryVal;
+   console.log([entryVal,res]);
+   let regFlow = /$/g;
+   let regFin = /\@/g;
+   let regNex = /([0-9\+\-\*\/\%])+/g;
+   let evaluate = [];
+   let eval = [];
+   let result;
+   if(entryVal.match(regFlow)!==null){
+    inp++;
+   }
 
-function FlowEval(ent,callback){ 
-    while(ent!=='$'){
-        callback(ent);
+   if(entryVal.match(regFin)!==null){
+     eval = res.match(regNex);
+     evaluate = eval.slice(-3);
+     if(evaluate[2]=='+'){
+        result = sum(+evaluate[0],+evaluate[1])
     }
+    if(evaluate[2]=='-'){
+        result = sub(+evaluate[0],+evaluate[1])
+    }
+    if(evaluate[2]=='*'){
+        result = mul(+evaluate[0],+evaluate[1])
+    }
+    if(evaluate[2]=='/'){
+        result = div(+evaluate[0],+evaluate[1])
+    }
+    if(evaluate[2]=='%'){
+        result = mod(+evaluate[0],+evaluate[1])
+    }
+    inp=0;
+   }
+   else{
+    inp++; 
+   }
+   console.log(evaluate,result);
 }
 
- function entry(val,callback){
-        entry.push(val);
-        let val = entry.slice(-1);
-        callback(val);
+ function entry(val){
+        enter.push(val);
+        let Eval = enter.slice(-1);
+        return Eval[0];
  }
 
- function sum(entry1, entry2){
+ function sum(entry1,entry2){
     return entry1 + entry2;
  }
 
@@ -71,97 +102,73 @@ function FlowEval(ent,callback){
 
 //adding eventlisteners
 btnstart.addEventListener('click',()=>{
-    FlowControl(1,(FlowEval()))
+    FlowEval(entry('$$'));
 })
 
 btnex.addEventListener('click',()=>{
-    entry('$',()=>{FlowEval()});
+    FlowEval(entry('$'))
 })
 
 btn1.addEventListener('click',()=>{
-    entry('1',()=>{FlowEval()});
+    FlowEval(entry('1'))
 })
 
 btn2.addEventListener('click',()=>{
-    entry('2',()=>{FlowEval()});
+    FlowEval(entry('2'))
 })
 
 btn3.addEventListener('click',()=>{
-    entry('3',()=>{FlowEval()});
+    FlowEval(entry('3'))
 })
 
 btn4.addEventListener('click',()=>{
-    entry('4',()=>{FlowEval()});
+    FlowEval(entry('4'))
 })
 
 btn5.addEventListener('click',()=>{
-    entry('5',()=>{FlowEval()});
+    FlowEval(entry('5'))
 })
 
 btn6.addEventListener('click',()=>{
-    entry('6',()=>{FlowEval()});
+    FlowEval(entry('6'))
 })
 
 btn7.addEventListener('click',()=>{
-    entry('7',()=>{FlowEval()});
+    FlowEval(entry('7'))
 })
 
 btn8.addEventListener('click',()=>{
-    entry('8',()=>{FlowEval()});
+    FlowEval(entry('8'))
 })
 
 btn9.addEventListener('click',()=>{
-    entry('9',()=>{FlowEval()});
+    FlowEval(entry('9'))
 })
 
 btn10.addEventListener('click',()=>{
-    entry('0',()=>{FlowEval()});
+    FlowEval(entry('0'))
 })
 
 btnop1.addEventListener('click',()=>{
-    entry('+',()=>{FlowEval()});
+    FlowEval(entry('+'))
 })
 
 btnop2.addEventListener('click',()=>{
-    entry('-',()=>{FlowEval()});
+    FlowEval(entry('-'))
 })
 
 btnop3.addEventListener('click',()=>{
-    entry('*',()=>{FlowEval()});
+    FlowEval(entry('*'))
 })
 
 btnop4.addEventListener('click',()=>{
-    entry('/',()=>{FlowEval()});
+    FlowEval(entry('/'))
 })
 
 btnop5.addEventListener('click',()=>{
-    entry('%',()=>{FlowEval()});
+    FlowEval(entry('%'))
 })
 
 btnop6.addEventListener('click',()=>{
-  FlowControl(0,(entry1,entry2,op)=>{
-    switch(op){
-        case (op=='+'):{
-            sum(entry1,entry2);
-            break;
-        }
-        case (op=='-'):{
-            sub(entry1,entry2);
-            break;
-        }
-        case (op=='*'):{
-            mul(entry1,entry2);
-            break;
-        }
-        case (op =='/'):{
-            div(entry1,entry2);
-            break;
-        }
-        case (op == '%'):{
-            mod(entry1,entry2);
-            break;
-        }
-        default:console.log(res);
-    }
-  })
+    FlowEval(entry('@'))
 })
